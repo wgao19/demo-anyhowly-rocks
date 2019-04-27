@@ -8,6 +8,7 @@ import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import img from "../../static/logos/logo-1024.png";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 
@@ -31,6 +32,10 @@ export default class PostTemplate extends React.Component {
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div>
             <h1>{post.title}</h1>
+            <h1>
+              word count:
+              {postNode.wordCount.words}
+            </h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
               <PostTags tags={post.tags} />
@@ -66,6 +71,16 @@ export const pageQuery = graphql`
         prevSlug
         slug
         date
+      }
+      wordCount {
+        words
+      }
+    }
+    file(relativePath: { eq: "logos/logo-1024.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }

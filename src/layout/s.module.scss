@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+:root {
+    --main-text: #222;
+    --header-color: teal;
+}
+
+:local {
+    .header a {
+        color: teal;
+        color: var(--header-color);
+        text-decoration: none;
+    }
+
+    .layout {
+        color: #222;
+        color: var(--main-text);
+    }
+}

@@ -1,0 +1,13 @@
+:local {
+    .header {
+        color: teal;
+        color: var(--header-color);
+        text-decoration: none;
+    }
+
+    .link {
+        margin-left: 0.3rem;
+        color: teal;
+        color: var(--header-color);
+    }
+}
